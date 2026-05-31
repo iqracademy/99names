@@ -9,8 +9,21 @@
   
 </head>
 <body>  
-          <!-- content -->
-          <h1>Hello World</h1>
+
+<body>  
+  <div id="myContent"></div>
+  
+  <script>
+    // This will load "test works" from test.txt and display it
+    fetch('test.txt')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('myContent').innerHTML = text;
+      })
+      .catch(error => {
+        document.getElementById('myContent').innerHTML = 'Error loading file';
+      });
+  </script>
 </body>
 </html>
 
